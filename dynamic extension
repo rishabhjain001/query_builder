@@ -1,0 +1,15 @@
+function enternumberofattr(){
+let numberofattr= prompt("Please enter number of attributes");
+for (var j=0 ; j< numberofattr; j++)
+{
+let attrName = prompt("Enter attribute name ");
+}
+}
+function enterTablesNum(){
+    let numberoftables=prompt("Please enter the number of tables you have","");
+for (var i=0; i<numberoftables;i++)
+{
+let tablename= prompt("Enter your table name");
+enternumberofattr();
+}
+}
