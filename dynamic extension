@@ -1,15 +1,23 @@
-function enternumberofattr(){
-let numberofattr= prompt("Please enter number of attributes");
-for (var j=0 ; j< numberofattr; j++)
-{
-let attrName = prompt("Enter attribute name ");
-}
-}
-function enterTablesNum(){
-    let numberoftables=prompt("Please enter the number of tables you have","");
-for (var i=0; i<numberoftables;i++)
-{
-let tablename= prompt("Enter your table name");
-enternumberofattr();
-}
-}
+var tablesName= new Array();
+var attributesName= new Array();
+var attributesOfCurrentTable =new Array();
+
+  function enternumberofattr(){
+        let numberofattr= prompt("Please enter number of attributes");
+       for (var j=0 ; j< numberofattr; j++)
+       {
+       let attrName = prompt("Enter attribute "+(j+1)+" name ");
+       attributesName[j]=attrName;
+       }
+       return attributesName;
+       }
+       function enterTablesNum(){
+       let numberoftables=prompt("Please enter the number of tables you have","");
+       for (var i=0; i<numberoftables;i++)
+       {
+       let tablename= prompt("Enter your table "+(i+1)+" name");
+       tablesName[i]=tablename;
+       attributesOfCurrentTable=enternumberofattr();
+          
+       }
+       }
