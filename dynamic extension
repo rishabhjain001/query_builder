@@ -1,13 +1,16 @@
 var tablesName= new Array();
 var attributesName= new Array();
-var attributesOfCurrentTable =new Array();
+var attributesStack =[];
+var stackForAttributesNumber=[];
 
   function enternumberofattr(){
         let numberofattr= prompt("Please enter number of attributes");
+        stackForAttributesNumber.push(numberofattr);
        for (var j=0 ; j< numberofattr; j++)
        {
        let attrName = prompt("Enter attribute "+(j+1)+" name ");
        attributesName[j]=attrName;
+       attributesOfCurrentTable.push(attrName);
        }
        return attributesName;
        }
@@ -17,7 +20,16 @@ var attributesOfCurrentTable =new Array();
        {
        let tablename= prompt("Enter your table "+(i+1)+" name");
        tablesName[i]=tablename;
-       attributesOfCurrentTable=enternumberofattr();
-          
+       enternumberofattr();
        }
        }
+
+
+function getAttributeStartIndexInStack(tableNumber){
+var startindex=0;
+while(tableNumber>0){
+startindex+=1*stackForAttributesNumber[tableNumber-1];
+tableNumber--;
+}
+return startindex;
+}
