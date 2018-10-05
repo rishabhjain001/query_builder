@@ -24,7 +24,7 @@ var stackForAttributesNumber=[];
        }
        }
 
-
+//function to get starting index of attributes of a particular table
 function getAttributeStartIndexInStack(tableNumber){
 var startindex=0;
 while(tableNumber>0){
@@ -32,4 +32,15 @@ startindex+=1*stackForAttributesNumber[tableNumber-1];
 tableNumber--;
 }
 return startindex;
+}
+
+//function to get selected table from the dropdown
+function getSelectedOption(){
+var selectoptions= document.getElementById('fromModel');
+var options = selectoptions.getElementsByTagName('option');
+for (var i=0;i<options.length;i++){
+if(options[i].selected===true)
+console.log(options[i].innerHTML)
+    }
+
 }
